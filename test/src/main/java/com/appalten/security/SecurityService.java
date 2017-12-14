@@ -11,30 +11,31 @@ import org.springframework.stereotype.Service;
 import com.appalten.dao.UsuariosDAO;
 import com.appalten.tablas.Usuario;
 
-@Service("securityService")
+//@Service("securityService")
 public class SecurityService implements UserDetailsService{
 
-	UsuariosDAO usuariosDAO;
+	//UsuariosDAO usuariosDAO;
 	
+	//Esta funcion sustituye a la logica del BO.
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User resultado;
-		List<Usuario> resultadoConsulta=usuariosDAO.consultaPorUsername(username);
-		Usuario usuario= null;
-		
-		switch(resultadoConsulta.size()){
-		case 0:
-			throw new UsernameNotFoundException("");
-		case 1:
-			usuario = resultadoConsulta.get(0);
-			break;
-		default:
-			throw new UsernameNotFoundException("");
-	}
-		
-		resultado = new User(username, usuario.getPassword(), null);
-		return resultado;
-//		return null;
+//		User resultado;
+//		List<Usuario> resultadoConsulta=usuariosDAO.consultaPorUsername(username);
+//		Usuario usuario= null;
+//		
+//		switch(resultadoConsulta.size()){
+//		case 0:
+//			throw new UsernameNotFoundException("");
+//		case 1:
+//			usuario = resultadoConsulta.get(0);
+//			break;
+//		default:
+//			throw new UsernameNotFoundException("");
+//	}
+//		
+//		resultado = new User(username, usuario.getPassword(), null);
+//		return resultado;
+		return null;
 	}
 
 	
